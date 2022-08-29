@@ -1,3 +1,3 @@
 print "Nhập một số bất kỳ:"
-number = gets
-puts "Số bạn vừa nhập là:#{number}"
+number_226 = gets
+puts "Số bạn vừa nhập là:#{number_226}"

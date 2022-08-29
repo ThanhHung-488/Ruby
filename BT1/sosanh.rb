@@ -1,9 +1,9 @@
 print "Nhập vào số thứ nhất: "
-a = gets
+a_226 = gets
 print "Nhập vào số thứ hai: "
-b = gets
-if a > b
-    puts "Số lớn hơn là: #{a} "
+b_226 = gets
+if a_226 > b_226
+    puts "Số lớn hơn là: #{a_226} "
 else
-    puts "Số lớn hơn là: #{b} "
+    puts "Số lớn hơn là: #{b_226} "
 end
