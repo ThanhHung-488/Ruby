@@ -40,7 +40,7 @@ end
 
 sv = SinhVien.new("Nguyễn Thị Thanh Hưng", "19T2")
 
-sv.nhapDiem(7, "TOAN")
+sv.nhapDiem(9, "TOAN")
 sv.nhapDiem(8, "LY")
 sv.nhapDiem(9, "HOA")
 
