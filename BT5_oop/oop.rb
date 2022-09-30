@@ -56,9 +56,34 @@ class NhanVien < CanBo
 end
 #Xây dựng lớp QLCB(quản lý cán bộ) 
 class QLCB 
-    attr_accessor :danhsach
-    def initialize
-        @danhsach = Array.new
+   
+    #Thêm mới cán bộ
+    def canbo_adding
+        puts 'Ten:'
+        isbn = gets.chomp.to_s
+      
+        puts 'Tuoi:'
+        title = gets.chomp.to_s
+      
+        puts 'Gioi tinh :'
+        subject = gets.chomp.to_s
+      
+        puts 'Dia chi :'
+        author = gets.chomp.to_s
+      
+        new_canbo = CanBo.new(ten, tuoi, gioitinh, diachi)
+      
+        $canbo_array.push(new_canbo.to_hash)
+        puts "Da them nhan vien moi thanh cong. Bam ENTER de tiep tuc"
+        gets.chomp
+      end
+    #Tìm kiếm theo họ tên
+    def search
         
     end
+    #Hiện thị thông tin về danh sách cán bộ
+    def show
+        
+    end
+    #Thoát khỏi chương trình
 end
