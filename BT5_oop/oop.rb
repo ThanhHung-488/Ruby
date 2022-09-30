@@ -60,16 +60,16 @@ class QLCB
     #Thêm mới cán bộ
     def canbo_adding
         puts 'Ten:'
-        isbn = gets.chomp.to_s
+        ten = gets.chomp.to_s
       
         puts 'Tuoi:'
-        title = gets.chomp.to_s
+        tuoi = gets.chomp.to_s
       
         puts 'Gioi tinh :'
-        subject = gets.chomp.to_s
+        gioitinh = gets.chomp.to_s
       
         puts 'Dia chi :'
-        author = gets.chomp.to_s
+        diachi = gets.chomp.to_s
       
         new_canbo = CanBo.new(ten, tuoi, gioitinh, diachi)
       
