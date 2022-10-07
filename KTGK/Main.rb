@@ -1,80 +1,98 @@
-require_relative 'Quanly.rb'
+require_relative 'QuanlyPhuongtien.rb'
+require_relative 'Xetai.rb'
 require_relative 'Oto.rb'
 require_relative 'Xemay.rb'
-require_relative 'Xetai.rb'
 class Main
-    manager_226 = Quanly.new
+    qlpt_226 = QuanlyPhuongtien.new
     while true do
-        puts "Quản lý các phương tiện giao thông"
-        puts "Enter 1: Thêm các phương tiện giao thông"
-        puts "Enter 2: Hiển thị danh sách  "
-        puts "Enter 3: Xóa theo (ID) các phương tiện và thuộc các loại trên"
-        puts "Enter 4: Tìm phương tiện theo hãng sản xuất màu biển số"
-        puts "Enter 5: Thoát chương trình"
-        option_226 = gets.chomp.to_i
-        case option_226
-            #Thêm các phương tiện giao thông: oto, xemay, xetai
-            when 1 
-                puts "Enter 1: Thêm oto"
-                puts "Enter 2: Thêm xe may"
-                puts "Enter 3: Thêm xe tải"
-                choose_226 = gets.chomp.to_s
-                #id_226, hsx_226, nsx_226, dongxe_226, gia_226, bienso_226, mauxe_226
-                if choose_226 == "1" || choose_226 == "2" || choose_226 == "3"
-                    puts "Nhập ID"
-                    id_226  = gets.chomp.to_s
-                    puts " Nhập hãng sản xuất:"
-                    hsx_226 = gets.chomp.to_s
-                    puts "Nhập nhà sản xuất "
-                    nsx_226 = gets.chomp.to_s
-                    puts "Nhập dòng xe "
-                    dongxe_226 = gets.chomp.to_s
-                    puts "Nhập giá bán "
-                    gia_226 = gets.chomp.to_s
-                    puts "Nhập biển số"
-                    bienso_226 = gets.chomp.to_s
-                    puts "Nhập màu xe "
-                    mauxe_226 = gets.chomp.to_s
-                end
-                # thêm mới các xe
-                case type_226
-                    #numberSeat_226, :kieudongco_226, :nhienlieu_226, :sotuikhi_226,:ngaydangkiem_226
-                    #Các ô tô: số chỗ ngồi, kiểu động cơ, nhiên liệu (xăng/dầu), số túi khí, ngày đăng kiểm.
-                when "1" 
-                    puts "Nhập số chỗ ngồi"
-                    numberSeat_226 = gets.chomp.to_s
-                    puts "Nhập kiểu động cơ "
-                    kieudongco_226 = gets.chomp.to_s
-                    oto_226 = car.new(id_226, hsx_226, nsx_226, dongxe_226, gia_226, bienso_226, mauxe_226, numberSeat_226, kieudongco_226, nhienlieu_226, sotuikhi_226, ngaydangkiem_226)
-                    manager_226.addPhuongtien(oto_226)
-                    puts oto_226.to_s
-                    #xe may
-                    ##Các xe máy: công suất, dung tích bình xăng.
-                when "2" 
-                    puts "Nhập công xuất"
-                    congsuat_226 = gets.chomp.to_s
-                    puts "Nhập dung tích bình xăng"
-                    dungtichxang_226 = gets.chomp.to_s
-                    xemay_226=xemay.new(id_226, hsx_226, nsx_226, dongxe_226, gia_226, bienso_226, mauxe_226,congsuat_226, dungtichxang_226)
-                    manager_226.addPhuongtien(xemay_226)
-                    puts xemay.to_s
-                    #Xe tải cần quản lý thêm: Trọng tải.
-                when "3" 
-                    puts "Nhập trọng tải"
-                    trongtai_226 = gets.chomp.to_s
-                    xetai_226=xetai.new(id_226, hsx_226, nsx_226, dongxe_226, gia_226, bienso_226, mauxe_226, trongtai_226)
-                    manager_226.addPhuongtien(xetai_226)
-                    puts xetai.to_s
-                else
-                    exit
-            end 
-        #Hiển thị danh sách 
+        puts "Nhap 1: them phuong tien"
+        puts "Nhap 2: xoa phuong tien"
+        puts "Nhap 3: tim phuong tien"
+        puts "Nhap 4: hiem thi danh sach"
+        puts "Nhap 5: thoat"
+        num_226 = gets.chomp.to_i
+        case num_226
+        when 1
+            puts "Nhap a: them Oto"
+            puts "Nhap b: them xe may"
+            puts "Nhap c: them xe tai"
+            type_226 = gets.chomp.to_s
+            if type_226 == "a" || type_226 == "b" || type_226 == "c"
+                print "Nhap id: "
+                id_226 = gets.chomp.to_s
+                print "Nhap hang san xuat: "
+                hsx_226 = gets.chomp.to_s
+                print "Nhap nam san xuat: "
+                nsx_226 = gets.chomp.to_i
+                print "Nhap dong xe: "
+                dongXe_226 = gets.chomp.to_s
+                print "Nhap gia ban: "
+                giaBan_226 = gets.chomp.to_i
+                print "Nhap mau: "
+                mau_226 = gets.chomp.to_s
+                print "Nhap bien so: "
+                bienSo_226 = gets.chomp.to_s
+            end
+            case type_226
+            when "a"
+                print "Nhap so cho ngoi: "
+                choNgoi_226 = gets.chomp.to_i
+                print "Nhap kieu dong co: "
+                dongCo_226 = gets.chomp.to_s
+                print "Nhap nhien lieu: "
+                nhienLieu_226 = gets.chomp.to_s
+                print "Nhap so tui khi: "
+                soTuiKhi_226 = gets.chomp.to_i
+                print "Nhap ngay kiem dang: "
+                ngayDangKiem_226 = gets.chomp.to_s
+                oto_226 = Oto.new(id_226, hsx_226, nsx_226, dongXe_226, giaBan_226, mau_226, bienSo_226, choNgoi_226, dongCo_226, nhienLieu_226, soTuiKhi_226, ngayDangKiem_226)
+                qlpt_226.addPhuongtien(oto_226)
+                puts oto_226.to_s
+            when "b"
+                print "Nhap cong suat: "
+                congSuat_226 = gets.chomp.to_i
+                print "Nhap dung tich: "
+                dungTichXang_226 = gets.chomp.to_s
+                xemay_226 = Xemay.new(id_226, hsx_226, nsx_226, dongXe_226, giaBan_226, mau_226, bienSo_226, congSuat_226, dungTichXang_226)
+                qlpt_226.addPhuongtien(xemay_226)
+                puts xemay_226.to_s
+            when "c"
+                print "Nhap trong tai: "
+                trongTai_226 = gets.chomp.to_i
+                xetai_226 = Xetai.new(id_226, hsx_226, nsx_226, dongXe_226, giaBan_226, mau_226, bienSo_226, trongTai_226)
+                qlpt_226.addPhuongtien(xetai_226)
+                puts xetai_226.to_s
+            else
+                exit
+            end
         when 2
-        #Xóa theo (ID) các phương tiện và thuộc các loại trên
+            print "Nhap id: "
+            id_226 = gets.chomp.to_s
+            qlpt_226.deletePhuongtien(id_226)
+            qlpt_226.showPhuongtien
         when 3
-        #Tìm phương tiện theo hãng sản xuất màu biển số"
-        when 4    
-        #5 Thoát khỏi chương trình
+            puts "Nhap a: tim theo hang san xuat"
+            puts "Nhap b: them xe mau"
+            puts "Nhap c: them bien so"
+            find_226 = gets.chomp.to_s
+            case find_226
+            when "a"
+                print "Nhap hang san xuat: "
+                hsx_226 = gets.chomp.to_s
+                qlpt_226.findHSX(hsx_226)
+            when "b"
+                print "Nhap mau: "
+                mau_226 = gets.chomp.to_s
+                qlpt_226.findMau(mau_226)
+            when "c"
+                print "Nhap bien so: "
+                bienSo_226 = gets.chomp.to_s
+                qlpt_226.findBienSo(bienSo_226)
+            else
+                exit
+            end
+        when 4
+            qlpt_226.showPhuongtien
         else
             exit
         end
