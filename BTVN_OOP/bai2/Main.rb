@@ -67,7 +67,7 @@ class Main
                 manager_226.showListInforDocument()
             when 4
                 puts "Enter id to remove: "
-
+                
             #Thoát khỏi chương trình
             else
                 exit
