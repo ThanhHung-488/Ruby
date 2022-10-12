@@ -55,11 +55,11 @@ class Main
                 end 
             # Tìm kiếm tài liệu theo loại: Sách, tạp chí, báo.
             when 2
-                puts "Enter 1: to insert Book"
-                puts "Enter 2: to insert Newspaper"
-                puts "Enter 3: to insert Journal"
+                puts "Enter 1: to search Book"
+                puts "Enter 2: to search Newspaper"
+                puts "Enter 3: to search Journal"
                 find_226 = gets.chomp.to_s
-                case choise_226
+                case find_226
                     when "a"
                         manager_226.findtoBook()
                     when "b"

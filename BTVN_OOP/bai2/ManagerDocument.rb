@@ -47,3 +47,4 @@ class ManagerDocument
         }
     end    
 end
+end
