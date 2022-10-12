@@ -59,15 +59,23 @@ class Main
                 puts "Enter 2: to insert Newspaper"
                 puts "Enter 3: to insert Journal"
                 find_226 = gets.chomp.to_s
-                puts "Enter Id to search:"
-                id_226 = gets.chomp.to_s
-                manager_226.findById(id_226)
+                case choise_226
+                    when "a"
+                        manager_226.findtoBook()
+                    when "b"
+                        manager_226.findtoNewspaper()
+                    when "c"
+                        manager_226.findtoJournal()
+                    else
+                        exit
+                    end
             #Hiển thị thông tin về tài liệu 
             when 3
                 manager_226.showListInforDocument()
             when 4
                 puts "Enter id to remove: "
-                
+                id_226 = gets.chomp.to_s
+                manager_226.deleteDocument(id_226)
             #Thoát khỏi chương trình
             else
                 exit
